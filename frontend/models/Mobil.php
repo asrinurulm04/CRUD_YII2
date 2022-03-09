@@ -56,7 +56,7 @@ class Mobil extends \yii\db\ActiveRecord
     {
         return [
             'id_mobil' => 'Id Mobil',
-            'nopol' => 'Nopol',
+            'nopol' => 'no_polisi',
             'nama_mobil' => 'Nama Mobil',
             'jenis_mobil' => 'Jenis Mobil',
             'tahun_pembuatan' => 'Tahun Pembuatan',

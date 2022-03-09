@@ -1,15 +1,10 @@
 <?php
-
-use yii\helper\html;
-
-$this->title = 'Create Mobil';
-$this->params['breadcrumbs'][] = ['label' => 'mobil','url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
-
+  use yii\helpers\Html;
+  $this->title = 'Create Mobil';
+  $this->params['breadcrumbs'][] = ['label' => 'mobil','url' => ['index']];
 ?>
 
-<div class="row">
-  <?= $this->render('_form', [
-      'model' => $model,
-  ]) ?>
-</div>
+<h1><?= Html::encode($this->title) ?></h1>
+<?= $this->render('_form', [
+  'model' => $model,
+]) ?>

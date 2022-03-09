@@ -13,7 +13,7 @@
     /** Create */
     public function actionCreate(){
         $model = new Mobil();
-        // new record
+        //$model->attributes = \Yii::$app->request->post('Mobil');
         if($model->load(Yii::$app->request->post()) && $model->save()){
             return $this->redirect(['index']);
         } 
@@ -21,21 +21,16 @@
     }
     
     /** Read */
-    public function actionIndex()
-    {
-        $student = Mobil::find()->all();
-         
-        return $this->render('index', ['model' => $student]);
+    public function actionIndex(){
+        $mobil = Mobil::find()->where(['status'=>'sewa'])->all();
+        return $this->render('index', ['model' => $mobil]);
     }
 
     /** Edit */
-    public function actionEdit($id)
-    {
+    public function actionEdit($id){
         $model = Mobil::find()->where(['id_mobil' => $id])->one();
-        // jika id kosong
         if($model === null)
             throw new NotFoundHttpException('The requested page does not exist.');
-        // update record
         if($model->load(Yii::$app->request->post()) && $model->save()){
             return $this->redirect(['index']);
         }
@@ -44,12 +39,10 @@
     }
 
     /** Delete */
-     public function actionDelete($id)
-     {
+     public function actionDelete($id){
         $model = Mobil::findOne($id);
-        if($model === null)
-          throw new NotFoundHttpException('The requested page does not exist.');
-          $model->delete();
+        $model->status='siap';
+        $model->save();
          
         return $this->redirect(['index']);
      }
