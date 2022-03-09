@@ -46,4 +46,11 @@
          
         return $this->redirect(['index']);
      }
+
+     public function actionData()
+    {
+        $mobil = Mobil::find()->where(['status'=>'sewa'])->all();
+
+        return \yii\helpers\Json::encode($mobil);
+    }
   }

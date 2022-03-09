@@ -37,14 +37,14 @@ class Mobil extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nopol', 'nama_mobil', 'jenis_mobil', 'tahun_pembuatan', 'harga_sewa', 'kapasitas_penumpang', 'status_mobil'], 'required'],
+            [['nopol', 'nama_mobil', 'jenis_mobil', 'tahun_pembuatan', 'harga_sewa', 'kapasitas_penumpang', 'status_mobil'], 'required', 'message' => '{attribute} Tidak Boleh kosong.'],
             [['harga_sewa', 'kapasitas_penumpang'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['nopol'], 'string', 'max' => 15],
             [['nama_mobil'], 'string', 'max' => 25],
             [['jenis_mobil'], 'string', 'max' => 20],
             [['tahun_pembuatan'], 'string', 'max' => 5],
-            [['status_mobil'], 'string', 'max' => 7],
+            [['status_mobil'], 'string', 'max' => 8],
             [['nopol'], 'unique'],
         ];
     }
@@ -56,7 +56,7 @@ class Mobil extends \yii\db\ActiveRecord
     {
         return [
             'id_mobil' => 'Id Mobil',
-            'nopol' => 'no_polisi',
+            'nopol' => 'No Polisi',
             'nama_mobil' => 'Nama Mobil',
             'jenis_mobil' => 'Jenis Mobil',
             'tahun_pembuatan' => 'Tahun Pembuatan',
