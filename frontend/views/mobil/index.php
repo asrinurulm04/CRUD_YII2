@@ -4,7 +4,7 @@
 ?>
  
 <p><?= Html::a('Create', ['create'], ['class' => 'btn btn-success']); ?></p>
-<!-- <table id="" class="table table-bordered">
+<!-- <table id="" class="table table-bordered"> 
   <tr class="text-center">
     <th>No Polisi</th>
     <th>Nama</th>
@@ -31,6 +31,8 @@
   </tr>
   <?php } ?>
 </table> -->
+
+<!-- table dengan ajax -->
 <table id="example" class="display" style="width:100%" class="table table-bordered">
   <thead>
     <tr>
