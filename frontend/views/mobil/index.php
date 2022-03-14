@@ -54,6 +54,7 @@
   var url = "http://localhost/yii-application/frontend/web/index.php?r=mobil%2Fdata";
   console.log(url);
   $(document).ready(function() {
+    // ajax 
     $('#example').DataTable( {
         "processing": true,
         ajax: {
